@@ -73,12 +73,28 @@ body {
     justify-content: center;
     animation: animationDown 0.3s;
     font-size: 1rem;
+
     a {
       color: black;
       &:hover {
         color: $blue;
         text-decoration: underline;
       }
+    }
+  }
+  .underBoxResume {
+    height: 500px;
+    margin-bottom: -500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .resumeFrame {
+      top: 0;
+      margin-top: 0px;
+      position: absolute;
+      width: 100vw;
+      height: 100vh;
     }
   }
 
@@ -103,7 +119,7 @@ body {
     }
     &:active {
       background-color: $blue;
-      color: black;
+      color: white;
       border-color: black;
     }
   }
@@ -159,20 +175,36 @@ body {
 
 @keyframes animationUp {
   0% {
-    // margin-bottom: -45px;
-    // height: 45px;
-    // font-size: 1rem;
-    // width: 100%;
-    // opacity: 100%;
     transform: translateX(0%);
   }
   100% {
-    // margin-bottom: 45px;
-    // height: 0px;
-    // font-size: 0.4rem;
-    // width: 0%;
-    // opacity: 0%;
     transform: translateX(-100%);
+  }
+}
+@keyframes animationUpResume {
+  0% {
+    opacity: 0%;
+    transform: scaleY(100%);
+  }
+  30% {
+    transform: translateX(0%) scaleY(5%);
+  }
+  100% {
+    opacity: 100%;
+    transform: translateX(100%) scaleY(0%);
+  }
+}
+@keyframes animationDownResume {
+  0% {
+    opacity: 0%;
+    transform: translateX(-100%) scaleY(0%);
+  }
+  70% {
+    transform: translateX(0%) scaleY(5%);
+  }
+  100% {
+    opacity: 100%;
+    transform: scaleY(100%);
   }
 }
 

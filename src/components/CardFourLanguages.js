@@ -46,6 +46,8 @@ function CardFourLanguages() {
               placeholder="<%= ruby_on_rails %>"
             />
 
+            <Icon image={sassIcon} classes="sass" placeholder="$sass" />
+
             <Icon
               image={photoshop}
               classes="photoshop"
@@ -53,12 +55,10 @@ function CardFourLanguages() {
             />
 
             <Icon image={premiere} classes="premiere" placeholder="Premiere" />
-
-            <Icon image={ableton} classes="ableton" placeholder="Ableton" />
           </div>
 
           <div className="icon-row">
-            <Icon image={sassIcon} classes="sass" placeholder="$sass" />
+            <Icon image={ableton} classes="ableton" placeholder="Ableton" />
           </div>
         </div>
       </div>

@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { Document, Page } from "react-pdf";
+import resume from "../img/sample.pdf";
 
 function Header() {
   let [menuIsOpen, setMenuOpen] = useState(false);
@@ -10,8 +12,16 @@ function Header() {
     display: "none",
     animation: "animationDown 0.5s",
   });
+  let [animateResumeStyle, setResumeAnimateStyle] = useState({
+    display: "none",
+    animation: "animationDown 0.5s",
+  });
+
   let [emailVisible, setEmail] = useState({ display: "flex" });
   let [gitVisible, setGit] = useState({ display: "none" });
+
+  const [numPages, setNumPages] = useState(null);
+  const [pageNumber, setPageNumber] = useState(1);
 
   function openMenu() {
     if (menuIsOpen === false) {
@@ -19,6 +29,10 @@ function Header() {
       setAnimateStyle({
         display: "none",
         animation: "animationUp 0.3s",
+      });
+      setResumeAnimateStyle({
+        display: "none",
+        animation: "animationUpResume 0.5s",
       });
 
       setEmailAnimateStyle({
@@ -29,6 +43,10 @@ function Header() {
       setAnimateStyle({
         display: "none",
         animation: "animationUp 0.3s",
+      });
+      setResumeAnimateStyle({
+        display: "none",
+        animation: "animationUpResume 0.5s",
       });
 
       setEmailAnimateStyle({
@@ -53,6 +71,10 @@ function Header() {
         display: "none",
         animation: "animationUp 0.3s",
       });
+      setResumeAnimateStyle({
+        display: "none",
+        animation: "animationUpResume 0.5s",
+      });
 
       setAnimateStyle({
         display: "flex",
@@ -63,7 +85,10 @@ function Header() {
         display: "flex",
         animation: "animationUp 0.3s",
       });
-
+      setResumeAnimateStyle({
+        display: "none",
+        animation: "animationUpResume 0.5s",
+      });
       setEmailAnimateStyle({
         display: "none",
         animation: "animationUp 0.3s",
@@ -84,6 +109,46 @@ function Header() {
     }
   }
 
+  function openResumeMenu() {
+    if (menuIsOpen === false) {
+      setMenuOpen(true);
+      setEmailAnimateStyle({
+        display: "none",
+        animation: "animationUp 0.3s",
+      });
+      setAnimateStyle({
+        display: "none",
+        animation: "animationUp 0.3s",
+      });
+      setResumeAnimateStyle({
+        display: "flex",
+        animation: "animationDownResume 0.5s",
+      });
+    } else {
+      setMenuOpen(false);
+      setResumeAnimateStyle({
+        display: "flex",
+        animation: "animationUpResume 0.5s",
+      });
+      setEmailAnimateStyle({
+        display: "none",
+        animation: "animationUp 0.3s",
+      });
+
+      setAnimateStyle({
+        display: "none",
+        animation: "animationUp 0.3s",
+      });
+
+      setTimeout(() => {
+        setMenuOpen(false);
+        setResumeAnimateStyle({
+          display: "none",
+        });
+      }, 280);
+    }
+  }
+
   return (
     <div id="header">
       <div style={emailAnimateStyle} className="linkUnderBox">
@@ -94,11 +159,18 @@ function Header() {
 
       <div style={animateStyle} className="linkUnderBox">
         <div className="underBoxGit">
-          <a href="">@john-farina</a>
+          <a href="https://github.com/john-farina">@john-farina</a>
         </div>
       </div>
 
-      <a href="./pdf.html">
+      <div style={animateResumeStyle} className="linkUnderBox underBoxResume">
+        <iframe className="resumeFrame" src={resume}></iframe>
+        <p>
+          Page {pageNumber} of {numPages}
+        </p>
+      </div>
+
+      <a onClick={openResumeMenu}>
         <button id="resumeButton" className="transition">
           resume
         </button>
