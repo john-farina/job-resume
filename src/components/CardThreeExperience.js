@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 function CardThreeExperience() {
-  let string = '"${yourCompanyName}"';
+  let string = "`${yourCompany.name}`";
   let [popUpStyle, setPopUpStyle] = useState({
     display: "none",
   });
@@ -10,7 +10,7 @@ function CardThreeExperience() {
     <div id="card3" className="card">
       <div className="cardBack cardBack3"></div>
       <div style={popUpStyle} className="alertPopUp">
-        <p className="cardText">TypeError: yourCompanyName is undefined</p>
+        <p className="cardText">TypeError: yourCompany.name is undefined.</p>
       </div>
       <div className="cardContents">
         <h2 className="cardTitle">Experience:</h2>
