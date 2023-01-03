@@ -615,8 +615,18 @@ iframe {
       cursor: pointer;
       width: 100%;
       height: 50px;
-      background-color: rgb(194, 194, 194);
+      background-color: rgb(47, 47, 47);
       border-radius: 2px;
+      display: flex;
+      align-items: center;
+      justify-content: start;
+
+      .rowLeft,
+      .rowRight {
+        width: 40%;
+        height: 100%;
+        background-color: red;
+      }
 
       &:hover {
         background-color: darkgray;
@@ -627,7 +637,7 @@ iframe {
       margin-top: -5px;
       width: 100%;
       height: 250px;
-      background-color: gray;
+      background-color: rgb(30, 30, 30);
       display: flex;
 
       .left,
@@ -674,7 +684,8 @@ iframe {
           width: 100%;
           height: 40px;
           opacity: 70%;
-          background-color: rgb(76, 76, 76);
+          background-color: rgba(118, 118, 118, 0.1);
+          backdrop-filter: blur(10px);
           display: flex;
           align-items: center;
           justify-content: center;
@@ -689,11 +700,13 @@ iframe {
             font-size: 6px;
             background-color: transparent;
             transition: scale 0.2s;
+            filter: invert(100%);
 
             img {
               width: 100%;
               height: 100%;
               margin-left: -2px;
+              user-select: none;
             }
 
             .rightArrow {
@@ -702,7 +715,7 @@ iframe {
             }
 
             &:hover {
-              filter: invert(100%);
+              filter: invert(0%);
               scale: 110%;
             }
           }

@@ -10,7 +10,7 @@ function MainPage() {
     <div id="card-container">
       <CardOneIntroduce />
       <TheLine />
-      <TwoProjects />
+      {/* <TwoProjects /> */}
       <CardTwoProjects />
       <TheLine />
       <CardThreeExperience />

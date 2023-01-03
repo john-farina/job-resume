@@ -3,7 +3,7 @@ import Pic from "../img/magib8ball.png";
 import Balancer from "react-wrap-balancer";
 import ArrowIcon from "../img/arrow.svg";
 
-export default function ProjectViewer({ imgArray, description }) {
+export default function ProjectViewer({ title, imgArray, description }) {
   const [clicked, setClicked] = useState(false);
   const clickClass = useRef("shown");
   const [imgPosition, setImgPosition] = useState(0);
@@ -49,7 +49,10 @@ export default function ProjectViewer({ imgArray, description }) {
           setClicked(!clicked);
         }}
       >
-        <h2>{}</h2>
+        <div className="rowLeft">
+          <h2>{title}</h2>
+        </div>
+        <div className="rowRight"></div>
       </div>
 
       <div className={`projectsDescription ${clickClass.current}`}>

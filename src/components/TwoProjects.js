@@ -5,8 +5,6 @@ import pic3 from "../img/rails.png";
 import pic4 from "../img/ableton.jpeg";
 
 export default function TwoProjects() {
-  const picArray = [pic1, pic2, pic3, pic4];
-
   const soundScapeData = {
     title: "soundScapes",
     detailedDesc:
@@ -19,10 +17,15 @@ export default function TwoProjects() {
       <div className="cardBack backing"></div>
       <div className="project">
         <ProjectViewer
+          title={soundScapeData.title}
           imgArray={soundScapeData.imgArray}
           description={soundScapeData.detailedDesc}
         />
-        {/* <ProjectViewer /> */}
+        <ProjectViewer
+          title={"another one"}
+          imgArray={soundScapeData.imgArray}
+          description={"blah blah"}
+        />
       </div>
     </div>
   );
