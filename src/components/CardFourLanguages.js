@@ -12,6 +12,7 @@ function CardFourLanguages() {
 
       <div className="cardContents">
         <h2 className="cardTitle">Languages:</h2>
+
         <div id="icon-container">
           <div className="icon-row">
             <Icon
@@ -48,7 +49,9 @@ function CardFourLanguages() {
 
             <Icon image={sassIcon} classes="sass" placeholder="$sass" />
           </div>
+
           <h2 className="cardTitle">Software:</h2>
+
           <div className="icon-row">
             <Icon image={ableton} classes="ableton" placeholder="Ableton" />
 

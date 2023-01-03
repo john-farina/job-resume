@@ -11,6 +11,7 @@
     "react-helmet": "^6.1.0",
     "react-pdf": "^5.7.2",
     "react-scripts": "5.0.1",
+    "react-wrap-balancer": "^0.2.4",
     "sass": "^1.54.9",
     "web-vitals": "^2.1.4"
   },

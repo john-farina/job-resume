@@ -3,9 +3,12 @@ function CardTwoProjects() {
   return (
     <div id="card2" className="card">
       <div className="cardBack cardBack2"></div>
+
       <div className="cardContents projectCont">
         <h2 className="cardTitle">Projects:</h2>
+
         <h3 className="cardSubTitle">Full Stack:</h3>
+
         <div className="textContainer">
           <p className="cardText">
             <a href="" className="textButton">

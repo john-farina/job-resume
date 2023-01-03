@@ -591,3 +591,145 @@ iframe {
     }
   }
 }
+
+.cardProj2 {
+  display: flex;
+  width: 100%;
+  // background-color: blue;
+
+  .backing {
+    // width: 20px;
+    height: 250px;
+  }
+
+  .project {
+    width: 100%;
+    margin-right: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    gap: 5px;
+
+    .projectsRow {
+      cursor: pointer;
+      width: 100%;
+      height: 50px;
+      background-color: rgb(194, 194, 194);
+      border-radius: 2px;
+
+      &:hover {
+        background-color: darkgray;
+      }
+    }
+
+    .projectsDescription {
+      margin-top: -5px;
+      width: 100%;
+      height: 250px;
+      background-color: gray;
+      display: flex;
+
+      .left,
+      .right {
+        height: 100%;
+        // background-color: green;
+      }
+
+      .left {
+        width: 60%;
+        // background-color: red;
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        position: relative;
+
+        .imageContainer {
+          width: 100%;
+          height: 100%;
+          // background-color: purple;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          .image {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            // background-color: blue;
+
+            .fit {
+              width: 100%;
+              height: 100%;
+              object-fit: contain;
+            }
+          }
+        }
+
+        .nextImageBar {
+          position: absolute;
+          bottom: 0;
+          width: 100%;
+          height: 40px;
+          opacity: 70%;
+          background-color: rgb(76, 76, 76);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 20px;
+
+          .imageButtons {
+            cursor: pointer;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            border: solid 2px black;
+            font-size: 6px;
+            background-color: transparent;
+            transition: scale 0.2s;
+
+            img {
+              width: 100%;
+              height: 100%;
+              margin-left: -2px;
+            }
+
+            .rightArrow {
+              transform: scaleX(-1);
+              margin-left: 1px;
+            }
+
+            &:hover {
+              filter: invert(100%);
+              scale: 110%;
+            }
+          }
+        }
+      }
+
+      .right {
+        width: 40%;
+        overflow-y: scroll;
+        border: solid 1px white;
+        padding-left: 5px;
+        border-radius: 3px;
+        height: 99%;
+        p {
+          text-align: left;
+          // margin-left: 15px;
+          font-size: 0.8rem;
+        }
+      }
+    }
+
+    .show {
+      display: flex;
+    }
+
+    .hidden {
+      display: none;
+    }
+  }
+}

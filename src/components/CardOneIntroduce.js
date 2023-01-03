@@ -17,18 +17,17 @@ function CardOneIntroduce() {
   let [titleContent, changeTitleContent] = useState("Hello World!");
 
   function loadDataOnce() {
-    // console.log("foward now");
     changeTitleContent("Hello World!");
+
     changeTitleClass(" forwardType");
 
     setTimeout(() => {
-      // console.log("backspace now");
       changeTitleClass(" backspaceType");
 
       setTimeout(() => {
         changeTitleContent("Hello!");
+
         changeTitleClass(" reType");
-        // console.log("retype now");
       }, 1750);
     }, 3400);
   }
@@ -39,13 +38,16 @@ function CardOneIntroduce() {
   return (
     <div id="card1" className="card">
       <div className="cardBack"></div>
+
       <div className="cardContents">
         <h2 id="typeText" className={"" + titleClass}>
           {titleContent}
         </h2>
+
         <p className="cardText">
           I am a <b className="boldText">FullStack Engineer</b>
         </p>
+
         <p className="cardText">
           I'm self taught, and went to school for Digital Art
         </p>
